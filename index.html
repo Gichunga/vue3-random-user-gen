@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Generator</title>
+</head>
+<body>
+    <div id="app">
+        Counter: {{ counter }}
+        <input v-model="message">
+        <button v-on:click="reverseMessage">Reverse message</button>
+        <p v-bind:title="loaded">Lets see how a title attribute will be binded to this paragraph</p>
+        <span v-if="seen">Now you see me</span>
+
+        <ul v-for="todo in todos">
+            <li>{{ todo.test }}</li>
+        </ul>
+
+        
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+</html>
