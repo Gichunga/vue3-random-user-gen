@@ -4,32 +4,20 @@ const app = Vue.createApp({
     // which returns an object
     data() {
         return {
-            cart: 0,
-            product: 'Socks',
-            description: 'I really loved thos socks',
-            image: './assets/images/socks_blue.jpg',
-            inStock: true,
-            inventory: 10,
-
-            details: ['50% cotton', '30% niron', '20% wool'],
-
-            variants: [
-                {id: 2234, color: 'green', image: './assets/images/socks_green.jpg'},
-                {id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg'},
-            ],
-
-            sizes: [38, 39, 40, 41, 42, 43],
+            cart: [],
+            premium: true,
+            details: ['50% ekjke']
         }
     },
     methods: {
-        addToCart() {
-            this.cart += 1
+        updateCart(id) {
+            this.cart.push(id);
         },
-        decrementCart() {
-            this.cart -= 1
-        },
-        updateImage(variantImage) {
-            this.image = variantImage
+        removeById(id) {
+            const index = this.cart.indexOf(id)
+                if (index > -1) {
+                    this.cart.splice(index, 1) /* at position (index) remove 1 item */
+                }
         }
     }
-})
+    })
